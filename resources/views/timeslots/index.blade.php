@@ -55,32 +55,31 @@ li{
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-/* From Uiverse.io by Codecite */ 
-.btn {
-  transition: all 0.3s ease-in-out;
-  font-family: "Dosis", sans-serif;
-}
 
-.btn {
-  width: 150px;
-  height: 60px;
-  border-radius: 50px;
-  background-image: linear-gradient(135deg, #feb692 0%, #ea5455 100%);
-  box-shadow: 0 20px 30px -6px rgba(238, 103, 97, 0.5);
-  outline: none;
+
+
+.button-33 {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
   cursor: pointer;
-  border: none;
-  font-size: 24px;
-  color: white;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-.btn:hover {
-  transform: translateY(3px);
-  box-shadow: none;
-}
-
-.btn:active {
-  opacity: 0.5;
+.button-33:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
 }
     </style>
 
@@ -102,13 +101,13 @@ li{
             @foreach($timeslots as $slot)
                 <li>
                     {{ $slot->start_time->format('Y-m-d H:i') }} — {{ $slot->end_time->format('H:i') }}
-                    @if($slot->booked)
+                    @if($slot->booked) 
                         <strong style="color:gray">(Booked)</strong>
                     @else
                         <form method="POST" action="/reservations" style="display:inline">
                             @csrf
                             <input type="hidden" name="timeslot_id" value="{{ $slot->id }}" />
-                            <button class="btn" type="submit">Rezerva</button>
+                            <button class="button-33" type="submit">Rezerva</button>
                         </form>
                     @endif
                 </li>

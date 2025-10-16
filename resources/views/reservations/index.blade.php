@@ -31,6 +31,27 @@
         button:hover {
             background-color: #ff1a1a;
         }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        form {
+            display: inline;
+        }
+        form button {
+            margin: 0;
+        }
+        form button:hover {
+            background-color: #ff1a1a;
+        }
+        form button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        form {
+            display: inline;
+        }
+        
     </style>
 
     <h1>Rezervarile mele</h1>
@@ -77,5 +98,6 @@
     </table>
 @endif
 
+<button onclick="window.location.href='/dashboard'">Inapoi</button>
 </body>
 </html>

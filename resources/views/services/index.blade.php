@@ -2,117 +2,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
+    <title>Servicii</title>
 </head>
 <body>
+<style>
+    
+    body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+        background-color: #f4f4f9; 
+        color: #333; 
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+        max-width: 800px; 
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+        border-radius: 8px; 
+        background-clip: padding-box; 
+    }
 
-    <style>
-         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f1ee;
-            color: #2e2b29;
-            margin: 0;
-            padding: 0;
-        }
+    
+    h1 {
+        font-size: 2.2rem;
+        color: #1a1a2e; 
+        border-bottom: 2px solid #e0e0f0; 
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
 
-        header {
-            background-color: #2b2b2b;
-            color: #fff;
-            text-align: center;
-            padding: 1.5rem 0;
-            border-bottom: 5px solid #c59d5f;
-        }
+    
+    div[style*="color:green"],
+    div[style*="color:red"] {
+        padding: 10px 15px;
+        margin: 15px 0;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        background-color: rgba(67, 160, 71, 0.1); 
+        color: #2e7d32 !important;
+        border: 1px solid #a5d6a7;
+    }
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            letter-spacing: 1px;
-            font-size: 2.2rem;
-            margin: 0;
-        }
+    div[style*="color:red"] {
+        background-color: rgba(229, 57, 53, 0.1); 
+        color: #c62828 !important;
+        border: 1px solid #ef9a9a;
+    }
 
-        main {
-            max-width: 800px;
-            margin: 2rem auto;
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+    ul {
+        list-style: none; 
+        padding: 0;
+        margin-top: 30px;
+    }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
+    li {
+        background-color: #ffffff;
+        padding: 15px 20px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+        border-left: 5px solid #4a90e2;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-        li {
-            background: #faf9f8;
-            border: 1px solid #e0dcd8;
-            border-left: 5px solid #c59d5f;
-            margin-bottom: 1rem;
-            padding: 1rem 1.2rem;
-            border-radius: 8px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+    li:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-        li:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+    li strong {
+        font-size: 1.1rem;
+        color: #1a1a2e;
+        display: block; 
+        margin-bottom: 5px;
+    }
 
-        strong {
-            font-size: 1.2rem;
-            color: #2b2b2b;
-        }
+    
+    li > * {
+        font-size: 0.95rem;
+        color: #555;
+    }
 
-        a {
-            text-decoration: none;
-            color: #c59d5f;
-            font-weight: 500;
-        }
+    a {
+        color: #4a90e2; 
+        text-decoration: none; 
+        font-weight: 500;
+        transition: color 0.2s;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    a:hover {
+        color: #357bd8; 
+        text-decoration: underline; 
+    }
 
-        .user-info {
-            text-align: center;
-            margin-bottom: 1rem;
-            color: #555;
-        }
+   
+    li div {
+        margin-top: 10px;
+        padding-top: 8px;
+        border-top: 1px dashed #eee; 
+    }
 
-        .no-services {
-            text-align: center;
-            color: #777;
-            font-style: italic;
-        }
+    p {
+        color: #666;
+    }
 
-        footer {
-            text-align: center;
-            margin: 2rem 0;
-        }
+    p:last-of-type {
+        margin-top: 40px;
+        text-align: center;
+    }
 
-        .back-link {
-            color: #2b2b2b;
-            text-decoration: none;
-            font-weight: bold;
-            background-color: #c59d5f;
-            color: #fff;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            transition: background-color 0.2s;
-        }
+    p a {
+        padding: 5px 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+    }
 
-        .back-link:hover {
-            background-color: #a37e47;
-        }
+    p a:hover {
+        background-color: #e9e9e9;
+        text-decoration: none;
+    }
         </style>
 
 
     <h1>Servicii</h1>
 
-    @auth
-        <p>Bine ai venit, {{ auth()->user()->name }}</p>
-    @endauth
+   
 
     @if(session('status'))
         <div style="color:green; text-align:center; margin:0.5rem 0">{{ session('status') }}</div>
@@ -142,7 +159,7 @@
                     <div>
                         <a href="/services/{{ $service->id }}/timeslots">Vezi intervalele</a>
                         @if(auth()->check() && auth()->user()->role === 'admin')
-                            | <a href="/admin/services/{{ $service->id }}/edit">Editeaza</a>
+                            <a href="/admin/services/{{ $service->id }}/edit">Editeaza</a>
                         @endif
                     </div>
                 </li>

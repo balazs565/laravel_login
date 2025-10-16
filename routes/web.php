@@ -21,7 +21,7 @@ Route::post('/login', function (\Illuminate\Http\Request $request) {
         return redirect()->intended('/dashboard');
     }
 
-    return back()->withInput()->withErrors(['error' => 'Invalid credentials.']);
+    return back()->withInput()->withErrors(['error' => 'Autentificare eșuată.']);
 });
 Route::get('/register', function () { return view('register'); });
 
